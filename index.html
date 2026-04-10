@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO: Update this description to match your current tagline -->
-  <meta name="description" content="Dylan Moraes — Co-Founder & CTO at LedgerPe. Building the intelligent routing layer for global stablecoin payments.">
+  <meta name="description" content="Dylan Moraes — Co-Founder & CTO at LedgerPe. 3x founder building the intelligent routing layer for global stablecoin payments.">
 
   <!-- Browser tab color on mobile -->
   <meta name="theme-color" content="#4F46E5">
@@ -36,7 +36,6 @@
 
     /* ==========================================================
        RESET
-       Removes default browser margins/padding for consistency.
        ========================================================== */
     *, *::before, *::after {
       margin: 0;
@@ -46,52 +45,60 @@
 
     /* ==========================================================
        BODY / PAGE LAYOUT
-       Centers content with max-width. Adjust padding for spacing.
        ========================================================== */
     body {
       font-family: var(--font);
-      font-size: 16px;            /* Base font size — all rem values scale from this */
-      line-height: 1.7;           /* Line spacing for readability */
+      font-size: 16px;
+      line-height: 1.7;
       color: var(--text);
       background: var(--bg);
       max-width: var(--max-width);
-      margin: 0 auto;             /* Centers the content column */
-      padding: 4rem 1.5rem 6rem;  /* Top / sides / bottom spacing */
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
     /* ==========================================================
        HEADER — Name + Tagline
-       The first thing visitors see. Keep the tagline to 1-2 lines.
        ========================================================== */
     .header {
-      margin-bottom: 3.5rem;      /* Space below header before first section */
+      margin-bottom: 3.5rem;
     }
 
     .header h1 {
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;    /* Slightly tighter tracking for the name */
+      letter-spacing: -0.02em;
     }
 
     .header .tagline {
       font-size: 1rem;
       color: var(--muted);
       line-height: 1.65;
-      max-width: 580px;           /* Prevents tagline from stretching too wide */
+      max-width: 580px;
+    }
+
+    /* Inline link inside the tagline */
+    .header .tagline a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .header .tagline a:hover {
+      border-color: var(--accent);
     }
 
     /* ==========================================================
-       SECTIONS — Shared styles for all content sections
-       Each section has an uppercase label + content below it.
+       SECTIONS — Shared styles
        ========================================================== */
     section {
-      margin-bottom: 3rem;        /* Vertical space between sections */
+      margin-bottom: 3rem;
     }
 
-    /* Small uppercase label above each section (e.g., "BUILDING", "NOW") */
+    /* Small uppercase label above each section */
     .section-label {
       font-size: 0.7rem;
       font-weight: 600;
@@ -102,9 +109,9 @@
     }
 
     /* ==========================================================
-       BUILDING SECTION — Your current projects
+       BUILDING SECTION — Current projects
        Each project has a linked name + one-line description.
-       To add a project: copy a .project block and update the text.
+       To add a project: copy a .project block and update text.
        ========================================================== */
     .project {
       margin-bottom: 1.25rem;
@@ -115,11 +122,10 @@
       font-weight: 500;
     }
 
-    /* Project name link styling */
     .project-name a {
       color: var(--text);
       text-decoration: none;
-      border-bottom: 1px solid var(--border);  /* Subtle underline */
+      border-bottom: 1px solid var(--border);
       transition: border-color 0.2s;
     }
 
@@ -128,7 +134,6 @@
       color: var(--accent);
     }
 
-    /* Project description — sits below the name */
     .project-desc {
       font-size: 0.925rem;
       color: var(--muted);
@@ -136,24 +141,24 @@
     }
 
     /* ==========================================================
-       NOW SECTION — What you're currently focused on
-       Bullet list with small indigo dots. Add/remove <li> items.
+       BULLET LIST — Used for Now, Recognition, etc.
+       Add/remove <li> items as needed.
        ========================================================== */
-    .now-list {
+    .dot-list {
       list-style: none;
       padding: 0;
     }
 
-    .now-list li {
+    .dot-list li {
       font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 0.5rem;
-      padding-left: 1rem;         /* Space for the bullet dot */
+      padding-left: 1rem;
       position: relative;
     }
 
     /* Small indigo dot bullet */
-    .now-list li::before {
+    .dot-list li::before {
       content: '';
       position: absolute;
       left: 0;
@@ -161,67 +166,76 @@
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      background: var(--accent);  /* Uses your accent color */
+      background: var(--accent);
     }
 
     /* ==========================================================
-       BACKGROUND SECTION — Work history + education
-       Each item has a bold role line + optional detail line.
-       To add a role: copy a .background-item block.
+       BACKGROUND ITEMS — Work history, education, research, speaking
+       Each item: bold title + optional muted detail line.
+       Copy .bg-item to add more.
        ========================================================== */
-    .background-item {
+    .bg-item {
       margin-bottom: 1.1rem;
     }
 
-    .background-role {
+    .bg-item-title {
       font-size: 0.95rem;
       font-weight: 500;
     }
 
-    .background-detail {
+    .bg-item-detail {
       font-size: 0.9rem;
       color: var(--muted);
     }
 
     /* ==========================================================
-       RESEARCH SECTION — Published research / papers
-       Same pattern: title + detail. Copy .research-item to add more.
+       BLOG SECTION
+       Each .blog-entry has a date, title (linked), and description.
+       To add a post: copy a .blog-entry block and fill in details.
        ========================================================== */
-    .research-item {
-      margin-bottom: 1rem;
+    .blog-entry {
+      margin-bottom: 1.35rem;
     }
 
-    .research-title {
-      font-size: 0.95rem;
+    .blog-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .blog-title {
+      font-size: 1rem;
       font-weight: 500;
+      margin-top: 0.1rem;
     }
 
-    .research-detail {
+    .blog-title a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+
+    .blog-title a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .blog-desc {
       font-size: 0.9rem;
       color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    /* Placeholder message when no posts yet */
+    .blog-placeholder {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
     }
 
     /* ==========================================================
-       SPEAKING SECTION — Talks, panels, pitches
-       Copy .speaking-item to add more events.
-       ========================================================== */
-    .speaking-item {
-      margin-bottom: 0.85rem;
-    }
-
-    .speaking-title {
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .speaking-detail {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ==========================================================
-       OUTSIDE WORK SECTION — Personal interests
-       Free-form text. Keep it short and human.
+       INTERESTS — Free-form text
        ========================================================== */
     .interests-text {
       font-size: 0.95rem;
@@ -230,9 +244,8 @@
     }
 
     /* ==========================================================
-       CONNECT SECTION — Social links
-       Inline list separated by middle-dots (·).
-       To add a link: add a new <li><a>...</a></li> inside the <ul>.
+       CONNECT — Social links, inline with middle-dot separators
+       To add a link: add a <li><a>...</a></li> inside the <ul>.
        ========================================================== */
     .connect-links {
       display: flex;
@@ -246,14 +259,12 @@
       font-size: 0.95rem;
     }
 
-    /* Middle dot separator between links */
     .connect-links li:not(:last-child)::after {
       content: '\00b7';
       margin: 0 0.6rem;
       color: var(--muted);
     }
 
-    /* Link styling — uses accent color */
     .connect-links a {
       color: var(--accent);
       text-decoration: none;
@@ -266,7 +277,6 @@
 
     /* ==========================================================
        FOOTER
-       Simple copyright line with a top border.
        ========================================================== */
     .footer {
       margin-top: 4rem;
@@ -277,8 +287,7 @@
     }
 
     /* ==========================================================
-       RESPONSIVE — Mobile adjustments (screens < 480px)
-       Reduces padding and font sizes slightly on small screens.
+       RESPONSIVE — Mobile (screens < 480px)
        ========================================================== */
     @media (max-width: 480px) {
       body {
@@ -298,18 +307,15 @@
 <body>
 
   <!-- ============================================================
-       HEADER — Your name and one-line tagline
-       Edit the <h1> for your name, <p> for your tagline.
+       HEADER
        ============================================================ -->
   <div class="header">
     <h1>Dylan Moraes</h1>
-    <p class="tagline">Co-Founder & CTO at <a href="https://ledgerpe.com" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--border);">LedgerPe</a>. Building the intelligent routing layer for global stablecoin payments. Based in Mumbai.</p>
+    <p class="tagline">Co-Founder & CTO at <a href="https://ledgerpe.com" target="_blank" rel="noopener">LedgerPe</a>. 3x founder. Building the intelligent routing layer for global stablecoin payments. Mumbai.</p>
   </div>
 
   <!-- ============================================================
-       BUILDING — Current projects you're working on
-       Each .project block = one project. Copy/paste to add more.
-       Update the <a href="..."> with the project URL.
+       BUILDING — Current products
        ============================================================ -->
   <section>
     <div class="section-label">Building</div>
@@ -326,12 +332,11 @@
   </section>
 
   <!-- ============================================================
-       NOW — What you're currently focused on
-       Add or remove <li> items to keep this section up to date.
+       NOW — Current focus areas
        ============================================================ -->
   <section>
     <div class="section-label">Now</div>
-    <ul class="now-list">
+    <ul class="dot-list">
       <li>Shipping Settle V7 to partners</li>
       <li>Raising $1.5M seed on a SAFE note</li>
       <li>Expanding Settle into Indonesia, Philippines, Vietnam, Thailand, Singapore</li>
@@ -341,91 +346,121 @@
   </section>
 
   <!-- ============================================================
-       PREVIOUSLY — Work history + education
-       Each .background-item = one role. Copy/paste to add more.
-       The .background-detail line is optional (delete if not needed).
+       PREVIOUSLY — Work history
+       Only founder-grade roles. No student clubs or minor roles.
        ============================================================ -->
   <section>
     <div class="section-label">Previously</div>
 
-    <div class="background-item">
-      <div class="background-role">Researcher, Hugging Face</div>
-      <div class="background-detail">Open-source AI research.</div>
+    <div class="bg-item">
+      <div class="bg-item-title">AI/ML Developer, Hewlett Packard Enterprise</div>
+      <div class="bg-item-detail">Deployed enterprise-grade ML pipelines for banking and government clients.</div>
     </div>
 
-    <div class="background-item">
-      <div class="background-role">AI/ML Developer, Hewlett Packard Enterprise</div>
-      <div class="background-detail">Enterprise AI platform deployments and ML systems for global clients.</div>
+    <div class="bg-item">
+      <div class="bg-item-title">Co-Founder & CTO, Polycosmos</div>
+      <div class="bg-item-detail">Built a virtual try-on system for fashion brands.</div>
     </div>
 
-    <div class="background-item">
-      <div class="background-role">Co-Founder & CTO, Polycosmos</div>
-      <div class="background-detail">Product delivery and SaaS scaling for cross-border deployments.</div>
+    <div class="bg-item">
+      <div class="bg-item-title">Co-Founder, BuildSphere</div>
+      <div class="bg-item-detail">Custom tech and marketing solutions for businesses. Scaled to $10K+ MRR while still in university.</div>
     </div>
 
-    <div class="background-item">
-      <div class="background-role">AI/ML Intern, L&T and L&T Technology Services</div>
-      <div class="background-detail">Smart contract analysis and EPC cost modeling using LLMs and LangChain.</div>
+    <div class="bg-item">
+      <div class="bg-item-title">AI/ML Intern, L&amp;T and L&amp;T Technology Services</div>
+      <div class="bg-item-detail">Contract analysis for Fortune 500 clients using LLMs. Contributed to self-driving systems at LTTS.</div>
     </div>
 
-    <div class="background-item">
-      <div class="background-role">Cloud Development Lead, Google Developer Student Clubs</div>
-      <div class="background-detail">Led cloud initiatives at Amity University Mumbai for over a year.</div>
+    <div class="bg-item">
+      <div class="bg-item-title">AI/ML Developer, IGSRS</div>
+      <div class="bg-item-detail">Built 20 AI use cases in HR and recruitment.</div>
     </div>
 
-    <div class="background-item">
-      <div class="background-role">B.Tech, Computer Science, Amity University Mumbai (2025)</div>
-      <div class="background-detail">CGPA 9.13</div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       RESEARCH — Published papers or research work
-       Copy .research-item to add more papers.
-       ============================================================ -->
-  <section>
-    <div class="section-label">Research</div>
-
-    <div class="research-item">
-      <div class="research-title">Hybrid Quantum-Classical Image Classification</div>
-      <div class="research-detail">97.2% accuracy with 72% qubit reduction. Presented at SPARCQC 2026.</div>
+    <div class="bg-item">
+      <div class="bg-item-title">B.Tech, Computer Science, Amity University Mumbai (2025)</div>
+      <div class="bg-item-detail">CGPA 9.13. Ashok K. Chauhan Scholarship recipient throughout degree.</div>
     </div>
   </section>
 
   <!-- ============================================================
-       SPEAKING — Talks, panels, and events
-       Copy .speaking-item to add more events.
-       ============================================================ -->
-  <section>
-    <div class="section-label">Speaking</div>
-
-    <div class="speaking-item">
-      <div class="speaking-title">Stable Roundtable, Mumbai Blockchain Week 2026</div>
-      <div class="speaking-detail">Moderated panel on stablecoin infrastructure. Bharat Web3 Association.</div>
-    </div>
-
-    <div class="speaking-item">
-      <div class="speaking-title">IGF Mumbai 2026, Catalysing Capital</div>
-      <div class="speaking-detail">Pitched LedgerPe to investors and ecosystem leaders.</div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       RECOGNITION — Awards, grants, and notable wins
-       Copy the list item pattern to add more.
+       RECOGNITION — Achievements, grants, awards
        ============================================================ -->
   <section>
     <div class="section-label">Recognition</div>
-    <ul class="now-list">
-      <li>1517 Medici Grant recipient ($1K)</li>
-      <li>National hackathon winner ($1K prize)</li>
-      <li>Blue verified on X/Twitter</li>
+    <ul class="dot-list">
+      <li>1517 Medici Grant recipient</li>
+      <li>100% Google Quantum AI Scholarship for a two-semester Quantum Computing program</li>
+      <li>All-India Rank 1929 in GATE DA 2025</li>
+      <li>Multi-time hackathon and demo day champion (Nirman 25, Hacknova 4.0, BNBHacks 25)</li>
+      <li>Ashok K. Chauhan Scholarship throughout B.Tech</li>
     </ul>
   </section>
 
   <!-- ============================================================
-       OUTSIDE WORK — Personal interests / hobbies
-       Free-form text. Keep it short and authentic.
+       RESEARCH — Published work and patents
+       ============================================================ -->
+  <section>
+    <div class="section-label">Research</div>
+
+    <div class="bg-item">
+      <div class="bg-item-title">Hybrid Quantum-Classical Image Classification</div>
+      <div class="bg-item-detail">97.2% accuracy with 72% qubit reduction. Presented at SPARCQC 2026.</div>
+    </div>
+
+    <div class="bg-item">
+      <div class="bg-item-title">AI-Optimized Traffic Flow (Patent Pending)</div>
+      <div class="bg-item-detail">International research project in collaboration with Sunbeams Japan.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPEAKING — Talks, panels, pitches
+       ============================================================ -->
+  <section>
+    <div class="section-label">Speaking</div>
+
+    <div class="bg-item">
+      <div class="bg-item-title">Stable Roundtable, Mumbai Blockchain Week 2026</div>
+      <div class="bg-item-detail">Moderated panel on stablecoin infrastructure. Bharat Web3 Association.</div>
+    </div>
+
+    <div class="bg-item">
+      <div class="bg-item-title">IGF Mumbai 2026, Catalysing Capital</div>
+      <div class="bg-item-detail">Pitched LedgerPe to investors and ecosystem leaders.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOG — Your writing, posted directly on this site.
+       
+       HOW TO ADD A POST:
+       1. Copy one .blog-entry block below
+       2. Update the date, title, href, and description
+       3. Remove the .blog-placeholder paragraph once you have posts
+
+       Example:
+       <div class="blog-entry">
+         <div class="blog-date">Apr 2026</div>
+         <div class="blog-title"><a href="/blog/your-post-slug">Your Post Title</a></div>
+         <div class="blog-desc">One-line summary of the post.</div>
+       </div>
+       ============================================================ -->
+  <section>
+    <div class="section-label">Writing</div>
+    <p class="blog-placeholder">Coming soon.</p>
+
+    <!-- TEMPLATE — uncomment and duplicate to add posts:
+    <div class="blog-entry">
+      <div class="blog-date">Apr 2026</div>
+      <div class="blog-title"><a href="#">Post Title Here</a></div>
+      <div class="blog-desc">Brief description of the post.</div>
+    </div>
+    -->
+  </section>
+
+  <!-- ============================================================
+       OUTSIDE WORK — Personal interests
        ============================================================ -->
   <section>
     <div class="section-label">Outside Work</div>
@@ -434,8 +469,6 @@
 
   <!-- ============================================================
        CONNECT — Social and contact links
-       Add a new <li><a href="...">Label</a></li> to add a link.
-       The middle-dot separator (·) is added automatically via CSS.
        ============================================================ -->
   <section>
     <div class="section-label">Connect</div>
@@ -443,14 +476,12 @@
       <li><a href="https://x.com/dylowisp" target="_blank" rel="noopener">X / Twitter</a></li>
       <li><a href="https://in.linkedin.com/in/dylanmoraes" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="https://github.com/Dljdd" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="https://medium.com/@dylanmoraes" target="_blank" rel="noopener">Medium</a></li>
       <li><a href="mailto:dylan@ledgerpe.com">Email</a></li>
     </ul>
   </section>
 
   <!-- ============================================================
-       FOOTER — Copyright line
-       Update the year as needed.
+       FOOTER
        ============================================================ -->
   <div class="footer">
     &copy; 2026 Dylan Moraes
