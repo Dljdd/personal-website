@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Update this description to match your current tagline -->
+  <meta name="description" content="Dylan Moraes — Founder & CTO at LedgerPe. Building crypto payment infrastructure for emerging markets.">
+
+  <!-- Browser tab color on mobile -->
+  <meta name="theme-color" content="#4F46E5">
+
+  <!-- Page title: Shows in the browser tab -->
+  <title>Dylan Moraes</title>
+
+  <!-- Font: Inter from Google Fonts. Swap to any other Google Font by changing the URL. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       DESIGN TOKENS
+       Change these variables to restyle the entire site at once.
+       ========================================================== */
+    :root {
+      --accent: #4F46E5;        /* Indigo — main accent color for links & bullets */
+      --accent-hover: #4338CA;  /* Darker indigo — hover state */
+      --bg: #ffffff;            /* Page background */
+      --text: #111111;          /* Primary text color */
+      --muted: #636363;         /* Secondary / descriptive text */
+      --border: #e5e5e5;        /* Dividers and subtle borders */
+      --max-width: 660px;       /* Content column width — keep between 600-720px */
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    /* ==========================================================
+       RESET
+       Removes default browser margins/padding for consistency.
+       ========================================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ==========================================================
+       BODY / PAGE LAYOUT
+       Centers content with max-width. Adjust padding for spacing.
+       ========================================================== */
+    body {
+      font-family: var(--font);
+      font-size: 16px;            /* Base font size — all rem values scale from this */
+      line-height: 1.7;           /* Line spacing for readability */
+      color: var(--text);
+      background: var(--bg);
+      max-width: var(--max-width);
+      margin: 0 auto;             /* Centers the content column */
+      padding: 4rem 1.5rem 6rem;  /* Top / sides / bottom spacing */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ==========================================================
+       HEADER — Name + Tagline
+       The first thing visitors see. Keep the tagline to 1-2 lines.
+       ========================================================== */
+    .header {
+      margin-bottom: 3.5rem;      /* Space below header before first section */
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;    /* Slightly tighter tracking for the name */
+    }
+
+    .header .tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 540px;           /* Prevents tagline from stretching too wide */
+    }
+
+    /* ==========================================================
+       SECTIONS — Shared styles for all content sections
+       Each section has an uppercase label + content below it.
+       ========================================================== */
+    section {
+      margin-bottom: 3rem;        /* Vertical space between sections */
+    }
+
+    /* Small uppercase label above each section (e.g., "BUILDING", "NOW") */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    /* ==========================================================
+       BUILDING SECTION — Your current projects
+       Each project has a linked name + one-line description.
+       To add a project: copy a .project block and update the text.
+       ========================================================== */
+    .project {
+      margin-bottom: 1.25rem;
+    }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* Project name link styling */
+    .project-name a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);  /* Subtle underline */
+      transition: border-color 0.2s;
+    }
+
+    .project-name a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Project description — sits below the name */
+    .project-desc {
+      font-size: 0.925rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    /* ==========================================================
+       NOW SECTION — What you're currently focused on
+       Bullet list with small indigo dots. Add/remove <li> items.
+       ========================================================== */
+    .now-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .now-list li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;         /* Space for the bullet dot */
+      position: relative;
+    }
+
+    /* Small indigo dot bullet */
+    .now-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);  /* Uses your accent color */
+    }
+
+    /* ==========================================================
+       BACKGROUND SECTION — Work history + education
+       Each item has a bold role line + optional detail line.
+       To add a role: copy a .background-item block.
+       ========================================================== */
+    .background-item {
+      margin-bottom: 1rem;
+    }
+
+    .background-role {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .background-detail {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* ==========================================================
+       RESEARCH SECTION — Published research / papers
+       Same pattern: title + detail. Copy .research-item to add more.
+       ========================================================== */
+    .research-item {
+      margin-bottom: 1rem;
+    }
+
+    .research-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .research-detail {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* ==========================================================
+       SPEAKING SECTION — Talks, panels, pitches
+       Copy .speaking-item to add more events.
+       ========================================================== */
+    .speaking-item {
+      margin-bottom: 0.75rem;
+    }
+
+    .speaking-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .speaking-detail {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* ==========================================================
+       OUTSIDE WORK SECTION — Personal interests
+       Free-form text. Keep it short and human.
+       ========================================================== */
+    .interests-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ==========================================================
+       CONNECT SECTION — Social links
+       Inline list separated by middle-dots (·).
+       To add a link: add a new <li><a>...</a></li> inside the <ul>.
+       ========================================================== */
+    .connect-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 0;
+      list-style: none;
+      padding: 0;
+    }
+
+    .connect-links li {
+      font-size: 0.95rem;
+    }
+
+    /* Middle dot separator between links */
+    .connect-links li:not(:last-child)::after {
+      content: '\00b7';
+      margin: 0 0.6rem;
+      color: var(--muted);
+    }
+
+    /* Link styling — uses accent color */
+    .connect-links a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .connect-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================
+       FOOTER
+       Simple copyright line with a top border.
+       ========================================================== */
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ==========================================================
+       RESPONSIVE — Mobile adjustments (screens < 480px)
+       Reduces padding and font sizes slightly on small screens.
+       ========================================================== */
+    @media (max-width: 480px) {
+      body {
+        padding: 3rem 1.25rem 4rem;
+      }
+
+      .header h1 {
+        font-size: 1.35rem;
+      }
+
+      section {
+        margin-bottom: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — Your name and one-line tagline
+       Edit the <h1> for your name, <p> for your tagline.
+       ============================================================ -->
+  <div class="header">
+    <h1>Dylan Moraes</h1>
+    <p class="tagline">Founder & CTO at LedgerPe. Building crypto payment infrastructure for emerging markets. Based in Mumbai.</p>
+  </div>
+
+  <!-- ============================================================
+       BUILDING — Current projects you're working on
+       Each .project block = one project. Copy/paste to add more.
+       Update the <a href="..."> with the project URL.
+       ============================================================ -->
+  <section>
+    <div class="section-label">Building</div>
+
+    <div class="project">
+      <div class="project-name"><a href="https://ledgerpe.com" target="_blank" rel="noopener">Settle</a></div>
+      <div class="project-desc">Crypto-to-INR off-ramp aggregator. Live with early GMV, expanding into Southeast Asia.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-name"><a href="https://ledgerpe.com" target="_blank" rel="noopener">Prime</a></div>
+      <div class="project-desc">Compliant non-custodial OTC infrastructure for HNIs, family offices, and institutional desks globally.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NOW — What you're currently focused on
+       Add or remove <li> items to keep this section up to date.
+       ============================================================ -->
+  <section>
+    <div class="section-label">Now</div>
+    <ul class="now-list">
+      <li>Hardening Settle V7 &mdash; 19-state order state machine, PAL, worker-based processing</li>
+      <li>Raising $1.5M on a SAFE note</li>
+      <li>Expanding Settle to Indonesia, Philippines, Vietnam, Thailand, Singapore</li>
+      <li>Building Prime's institutional sales pipeline &mdash; Keyrock, QCP, Wintermute</li>
+      <li>Growing personal brand and content presence</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================
+       BACKGROUND — Work history + education
+       Each .background-item = one role. Copy/paste to add more.
+       The .background-detail line is optional (delete if not needed).
+       ============================================================ -->
+  <section>
+    <div class="section-label">Background</div>
+
+    <div class="background-item">
+      <div class="background-role">AI/ML Engineering &mdash; HPE, L&T, LTTS</div>
+      <div class="background-detail">Enterprise platform deployments, smart contract analysis, and cost modeling using OpenAI and LangChain.</div>
+    </div>
+
+    <div class="background-item">
+      <div class="background-role">B.Tech, Computer Science &mdash; Amity University Mumbai (2025)</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESEARCH — Published papers or research work
+       Copy .research-item to add more papers.
+       ============================================================ -->
+  <section>
+    <div class="section-label">Research</div>
+
+    <div class="research-item">
+      <div class="research-title">Hybrid Quantum-Classical Image Classification</div>
+      <div class="research-detail">97.2% accuracy with 72% qubit reduction. Presented at SPARCQC 2026.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPEAKING — Talks, panels, and events
+       Copy .speaking-item to add more events.
+       ============================================================ -->
+  <section>
+    <div class="section-label">Speaking</div>
+
+    <div class="speaking-item">
+      <div class="speaking-title">Stable Roundtable &mdash; Mumbai Blockchain Week 2026</div>
+      <div class="speaking-detail">Moderated panel on stablecoin infrastructure. Bharat Web3 Association.</div>
+    </div>
+
+    <div class="speaking-item">
+      <div class="speaking-title">IGF Mumbai 2026 &mdash; Catalysing Capital</div>
+      <div class="speaking-detail">Pitched LedgerPe to investors and ecosystem leaders.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OUTSIDE WORK — Personal interests / hobbies
+       Free-form text. Keep it short and authentic.
+       ============================================================ -->
+  <section>
+    <div class="section-label">Outside Work</div>
+    <p class="interests-text">Reading Greek classics. Singing and listening to music. Watching anime. Building AI side projects. Working on fitness goals.</p>
+  </section>
+
+  <!-- ============================================================
+       CONNECT — Social and contact links
+       Add a new <li><a href="...">Label</a></li> to add a link.
+       The middle-dot separator (·) is added automatically via CSS.
+       ============================================================ -->
+  <section>
+    <div class="section-label">Connect</div>
+    <ul class="connect-links">
+      <li><a href="https://x.com/dylowisp" target="_blank" rel="noopener">X / Twitter</a></li>
+      <li><a href="https://in.linkedin.com/in/dylanmoraes" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/Dljdd" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="mailto:dylan@ledgerpe.com">Email</a></li>
+    </ul>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — Copyright line
+       Update the year as needed.
+       ============================================================ -->
+  <div class="footer">
+    &copy; 2026 Dylan Moraes
+  </div>
+
+</body>
+</html>
